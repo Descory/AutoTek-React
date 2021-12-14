@@ -10,6 +10,7 @@ function Gidas(){
     const { id } = useParams();
     const token =  localStorage.getItem('auth_token')
     const usrid =  localStorage.getItem('user_id')
+    const role =  localStorage.getItem('user_role')
 
     const [tempSprend, setTempSprend] = useState('');
 
@@ -111,7 +112,7 @@ function Gidas(){
     }
 
     const findMechanikas = (tid) => {
-        if(""+usrid !== ""+tid && tid !==null){
+        if(""+usrid !== ""+tid && tid !==null && role !== "1"){
             history.push('/gidai')
         }
         var x = null;
